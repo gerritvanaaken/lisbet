@@ -1,11 +1,9 @@
 <template>
 	<div class="songs">
 		<h2 class="songs__headline">Liste der Songs</h2>
-		<ul class="songs__list">
-			<li class="songs_item" v-for="song in songs">
-				<bet-song v-bind:song="song"></bet-song>
-			</li>
-		</ul>
+		<transition-group name="flip-list" tag="ul" class="songs__list">
+			<bet-song v-for="(song, index) in songs" v-bind:song="song" v-bind:key="song.country" v-bind:index="index" ></bet-song>
+		</transition-group>
 	</div>
 </template>
 
@@ -33,5 +31,8 @@ export default {
 .songs {
 	max-width: 20em;
 	
+}
+.flip-list-move {
+  transition: transform 1s;
 }
 </style>

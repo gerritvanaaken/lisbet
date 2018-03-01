@@ -1,12 +1,15 @@
 <template>
-	<div class="song">
+	<li class="songs__song song">
 		<div class="song__country">
-			<img class="song__flag" v-bind:src="'./assets/flag-' + song.country + '.png'" />
+			<img class="song__flag" v-bind:src="'./src/assets/flags/' + song.country + '.svg'" width="30" height="20" />
 			<span class="song__countrycode">{{ song.country }}</span>
 		</div>
 		<h3 class="song__title">{{ song.title }}</h3>
 		<div class="song_artist">{{ song.artist }}</div>
-	</div>
+		<div class="song__order">{{ song.order }}</div>
+		<div class="song__points">{{ song.points }}</div>
+		<div class="song__rank">{{ index + 1 }}</div>
+	</li>
 </template>
 
 <script>
@@ -15,6 +18,9 @@ export default {
 	props: {
 		song: {
 			type: Object
+		},
+		index: {
+			type: Number
 		}
 	},
 	data () {
