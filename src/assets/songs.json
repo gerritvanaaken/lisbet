@@ -3,7 +3,7 @@
 		"formatversion": "1",
 		"day": "2017-05-13",
 		"type": "finale",
-		"stage": "finished"
+		"stage": "finale"
 	},
 	"songs": [
 		{
@@ -23,7 +23,7 @@
 		{
 			"country": "BLR",
 			"order": 3,
-			"points": 83,
+			"points": 3083,
 			"title": "Story Of My Life",
 			"artist": "NAVI"
 		},
@@ -163,7 +163,7 @@
 		{
 			"country": "BEL",
 			"order": 23,
-			"points": 363,
+			"points": 3363,
 			"title": "City Lights",
 			"artist": "Blanche"
 		},

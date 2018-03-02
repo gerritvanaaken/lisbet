@@ -1,17 +1,22 @@
 <template>
-	<div id="app">
-		<bet-songs v-bind:songs="results.songs"></bet-songs>
+	<div id="app" class="app">
+		<div class="app__betarea">
+			<bet-songs v-bind:songs="songdata.songs"></bet-songs>
+			<bet-players v-bind:players="players" v-bind:songs="songdata.songs"></bet-players>
+		</div>
 	</div>
 </template>
 
 <script>
 import Songs from './components/Songs.vue';
+import Players from './components/Players.vue';
 import axios from 'axios';
 
 export default {
 	name: 'app',
 	components: {
-		'bet-songs': Songs
+		'bet-songs': Songs,
+		'bet-players': Players
 	},
    methods: {
    	fetchSongs () {
@@ -22,7 +27,7 @@ export default {
     						return b.points - a.points;
     					});
     				}
-    				this.results = response.data;
+    				this.songdata = response.data;
     		})
     			.catch(error => {
     				console.log(error);
@@ -35,7 +40,17 @@ export default {
    },
 	data () {
 		return {
-			results: {}
+			songdata: {},
+			players: [
+				{
+					name: 'Gerda',
+					ranking: ['GER','AUS','POL']
+				},
+				{
+					name: 'Ulli',
+					ranking: ['BLR', 'NED', 'MDA', 'AUT']
+				}
+			]
 		}
 	}
 }
@@ -53,8 +68,14 @@ export default {
 }
 
 body {
-	font-family: sans-serif;
 	padding: 5%;
+}
+
+.app {
+	font-family: sans-serif;
+	&__betarea {
+		display: flex;
+	}
 }
 
 </style>

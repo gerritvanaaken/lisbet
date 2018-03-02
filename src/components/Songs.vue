@@ -2,7 +2,7 @@
 	<div class="songs">
 		<h2 class="songs__headline">Liste der Songs</h2>
 		<transition-group name="flip-list" tag="ul" class="songs__list">
-			<bet-song v-for="(song, index) in songs" v-bind:song="song" v-bind:key="song.country" v-bind:index="index" ></bet-song>
+			<bet-song v-for="(song, index) in songs" :song="song" :key="song.country" :index="index" ></bet-song>
 		</transition-group>
 	</div>
 </template>
