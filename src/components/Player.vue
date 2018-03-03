@@ -2,13 +2,15 @@
 	<article class="players__player player">
 
 		<h3 class="player__name">{{ player.name }}</h3>
+		<button @click="addRandomSong()">Add random song</button>
 		<ul>
-			<bet-song v-for="(rankedcountry, index) in player.ranking" :index="index" :song="getSongByCountry(rankedcountry)"></bet-song>
+			<bet-song v-for="(song, index) in player.ranking" :song="song" :key="index" :index="index"></bet-song>
 		</ul>
 	</article>
 </template>
 
 <script>
+import { EventBus } from '../bus.js';
 import Song from './Song.vue';
 export default {
 	name: 'player',
@@ -24,19 +26,10 @@ export default {
 		}
 		
 	},
-	data () {
-		return { }
-	},
 	methods: {
-		getSongByCountry: function (country) {
-			console.log(songs);
-			return {};
-			songs.forEach(function(song) {
-				if (onesong.country === country) {
-					return song;
-				}
-			});
-			return {};
+		addRandomSong() {
+			// does not hot-reference the song. Unfortunately. Can we fix that?
+			this.player.ranking.push(this.songs[Math.floor(Math.random() * 26)]);
 		}
 	}
 }

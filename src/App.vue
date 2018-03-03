@@ -41,16 +41,7 @@ export default {
 	data () {
 		return {
 			songdata: {},
-			players: [
-				{
-					name: 'Gerda',
-					ranking: ['GER','AUS','POL']
-				},
-				{
-					name: 'Ulli',
-					ranking: ['BLR', 'NED', 'MDA', 'AUT']
-				}
-			]
+			players: []
 		}
 	}
 }

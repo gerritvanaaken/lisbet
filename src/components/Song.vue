@@ -1,7 +1,7 @@
 <template>
 	<li class="songs__song song">
 		<div class="song__country">
-			<img class="song__flag" v-bind:src="'./src/assets/flags/' + song.country + '.svg'" width="30" height="20" />
+			<img class="song__flag" v-bind:src="'./src/assets/flags/' + 'AUS' + '.svg'" width="30" height="20" />
 			<span class="song__countrycode">{{ song.country }}</span>
 		</div>
 		<h3 class="song__title">{{ song.title }}</h3>
@@ -21,11 +21,6 @@ export default {
 		},
 		index: {
 			type: Number
-		}
-	},
-	data () {
-		return {
-	
 		}
 	}
 }

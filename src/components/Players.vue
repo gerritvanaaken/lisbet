@@ -1,8 +1,9 @@
 <template>
 	<section class="players">
 		<h2 class="players__headline">Who will win?</h2>
+		<button @click="addPlayer()">Add New Player</button>
 		<div class="players__list">
-			<bet-player v-for="player in players" :player="player" :songs="songs"></bet-player>
+			<bet-player v-for="(player, index) in players" :key="index" :player="player" :songs="songs"></bet-player>
 		</div>
 	</section>
 </template>
@@ -25,6 +26,14 @@ export default {
 	data () {
 		return {
 	
+		}
+	},
+	methods: {
+		addPlayer() {
+			this.players.push({
+				name: 'New Player',
+				ranking: []
+			})
 		}
 	}
 }
