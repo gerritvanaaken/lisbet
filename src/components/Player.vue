@@ -1,7 +1,8 @@
 <template>
 	<article class="players__player player">
 
-		<h3 class="player__name">{{ player.name }}</h3>
+		<h3 class="player__name" @click="toggleNameChange">{{ player.name }}</h3>
+		<input type="text" v-model="player.name" v-if="namechange" @blur="toggleNameChange" autofocus />
 		<h2>Rank Difference: {{ rankDifference }}</h2>
 		<button @click="addRandomSong()">Add random song</button>
 		<ul>
@@ -26,10 +27,23 @@ export default {
 		}
 		
 	},
+	data() {
+		return {
+			namechange: false
+		}
+	},
 	methods: {
 		addRandomSong() {
 			// does not hot-reference the song. Unfortunately. Can we fix that?
 			this.player.ranking.push(this.songs[Math.floor(Math.random() * 26)]);
+		},
+		toggleNameChange() {
+			if (this.namechange) {
+				this.namechange = false;
+			} else {
+				this.namechange = true;
+
+			}
 		}
 	},
 	computed: {
