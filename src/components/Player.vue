@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { EventBus } from '../bus.js';
 import Song from './Song.vue';
 export default {
 	name: 'player',
