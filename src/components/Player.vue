@@ -5,17 +5,23 @@
 		<input type="text" v-model="player.name" v-if="namechange" @blur="toggleNameChange" autofocus />
 		<h2>Rank Difference: {{ rankDifference }}</h2>
 		<button @click="addRandomSong()">Add random song</button>
-		<ul>
-			<bet-song v-for="(song, index) in player.ranking" :song="song" :key="index" :index="index"></bet-song>
-		</ul>
+
+		<draggable v-model="player.ranking" class="dragArea" :options="{group:'songs'}">
+			<transition-group name="flip-list" tag="ul" class="player__songlist">
+				<bet-song v-for="(song, index) in player.ranking" :song="song" :key="song.country" :index="index"></bet-song>
+			</transition-group>
+		</draggable>
 	</article>
 </template>
 
 <script>
 import Song from './Song.vue';
+import draggable from 'vuedraggable'
+
 export default {
 	name: 'player',
 	components: {
+		draggable,
 		'bet-song': Song
 	},
 	props: {
