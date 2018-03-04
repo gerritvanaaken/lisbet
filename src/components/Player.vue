@@ -4,9 +4,8 @@
 		<h3 class="player__name" @click="toggleNameChange">{{ player.name }}</h3>
 		<input type="text" v-model="player.name" v-if="namechange" @blur="toggleNameChange" autofocus />
 		<h2>Rank Difference: {{ rankDifference }}</h2>
-		<button @click="addRandomSong()">Add random song</button>
 
-		<draggable v-model="player.ranking" class="dragArea" :options="{group:'songs'}">
+		<draggable v-model="player.ranking" :options="{group: {name: 'playerlist', put: 'songs', pull: false}, animation: 300}" @add="addedSong">
 			<transition-group name="flip-list" tag="ul" class="player__songlist">
 				<bet-song v-for="(song, index) in player.ranking" :song="song" :key="song.country" :index="index"></bet-song>
 			</transition-group>
@@ -39,9 +38,10 @@ export default {
 		}
 	},
 	methods: {
-		addRandomSong() {
-			// does not hot-reference the song. Unfortunately. Can we fix that?
-			this.player.ranking.push(this.songs[Math.floor(Math.random() * 26)]);
+		addedSong(e) {
+
+			console.log('added song');
+			console.log(e);
 		},
 		toggleNameChange() {
 			if (this.namechange) {
@@ -78,6 +78,9 @@ export default {
 	margin: 1em 0;
 	border-radius: .2rem;
 	padding: 1rem;
+	&__songlist {
+		min-height: 5rem;
+	}
 }
 
 </style>

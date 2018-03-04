@@ -1,7 +1,7 @@
 <template>
 	<div class="songs">
 		<h2 class="songs__headline">Liste der Songs</h2>
-		<draggable v-model="songs" class="dragArea" @sort="alert('sdkj')" :options="{group: {name: 'songs', pull: 'clone'}}">
+		<draggable :list="songs" class="dragArea" :options="{sort: false, group: {name: 'songs', pull: 'clone', put: false}}">
 			<transition-group name="flip-list" tag="ul" class="songs__list">
 				<bet-song v-for="(song, index) in songs" :song="song" :key="song.country" :index="index" ></bet-song>
 			</transition-group>
@@ -38,6 +38,6 @@ export default {
 	
 }
 .flip-list-move {
-  transition: transform 1s;
+  transition: transform .7s;
 }
 </style>
