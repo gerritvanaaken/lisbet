@@ -46,8 +46,9 @@ export default {
 	&__headline {
 		color: #fff;
 	}
+	.flip-list-move {
+		transition: transform .7s;
+	}
 }
-.flip-list-move {
-	transition: transform .7s;
-}
+
 </style>

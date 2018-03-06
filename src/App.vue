@@ -60,7 +60,7 @@ export default {
 
 body {
 	padding: 3%;
-	background: #333;
+	background: #346;
 }
 
 .app {

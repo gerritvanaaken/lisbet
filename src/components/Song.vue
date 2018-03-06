@@ -31,7 +31,7 @@ export default {
 .song {
 	position: relative;
 	padding: .5rem;
-	background: linear-gradient(135deg, #eee 0, #777 100%);
+	background: linear-gradient(135deg, rgba(255,255,255,.9) 0, rgba(255,255,255,.4) 100%);
 	box-shadow: 0 0 1rem rgba(0,0,0,0.5);
 	margin: .5rem 0;
 	border-radius: .2rem;
