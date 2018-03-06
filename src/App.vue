@@ -1,8 +1,8 @@
 <template>
 	<div id="app" class="app">
 		<div class="app__betarea">
-			<bet-songs v-bind:songs="songdata.songs"></bet-songs>
-			<bet-players v-bind:players="players" v-bind:songs="songdata.songs"></bet-players>
+			<bet-songs :songs="songdata.songs" :meta="songdata.meta"></bet-songs>
+			<bet-players :players="players" :songs="songdata.songs"></bet-players>
 		</div>
 	</div>
 </template>
@@ -20,29 +20,27 @@ export default {
 		'bet-songs': Songs,
 		'bet-players': Players
 	},
-   methods: {
-   	fetchSongs () {
-   		axios.get('http://localhost:8080/src/assets/songs.json')
-    			.then(response => {
-    				if (response.data.meta.stage !== 'init') {
-    					response.data.songs.sort(function(a, b){
-    						return b.points - a.points;
-    					});
-    				}
-    				this.songdata = response.data;
-    		})
-    			.catch(error => {
-    				console.log(error);
-    		})
-   	}
-   },
-   created () {
-   	this.fetchSongs();
-   	var songFetcher = setInterval(this.fetchSongs, 2000);
-   },
+	methods: {
+		fetchSongs () {
+			axios.get('http://localhost:8080/src/assets/songs.json').then(response => {
+				if (response.data.meta.stage !== 'init') {
+					response.data.songs.sort(function(a, b){
+						return b.points - a.points;
+					});
+				}
+				this.songdata = response.data;
+			}).catch(error => {
+				console.log(error);
+			})
+		}
+	},
+	created () {
+		this.fetchSongs();
+		var songFetcher = setInterval(this.fetchSongs, 2000);
+	},
 	data () {
 		return {
-			songdata: {},
+			songdata: { meta: {}, songs: []},
 			players: []
 		}
 	}
@@ -61,10 +59,12 @@ export default {
 }
 
 body {
-	padding: 5%;
+	padding: 3%;
+	background: #333;
 }
 
 .app {
+
 	font-family: sans-serif;
 	&__betarea {
 		display: flex;

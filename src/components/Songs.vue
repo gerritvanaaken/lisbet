@@ -1,7 +1,7 @@
 <template>
 	<div class="songs">
-		<h2 class="songs__headline">Liste der Songs</h2>
-		<draggable :list="songs" @start="globalStoreCandidate" @end="globalRemoveCandidate" :options="{sort: false, group: {name: 'songs', pull: 'clone', put: false}}">
+		<h2 class="songs__headline">Participants {{ meta.showtype }}</h2>
+		<draggable :list="songs" @start="globalStoreCandidate" @end="globalRemoveCandidate" :options="{sort: false, group: {name: 'songs', pull: 'clone', put: false}, animation: 300}">
 			<transition-group name="flip-list" tag="ul" class="songs__list">
 				<bet-song v-for="(song, index) in songs" :song="song" :key="song.country" :index="index" ></bet-song>
 			</transition-group>
@@ -22,10 +22,11 @@ export default {
 	props: {
 		songs: {
 			type: Array
+		},
+		meta: {
+			type: Object
 		}
-	},
-	data() {
-		return {}
+
 	},
 	methods: {
 		globalStoreCandidate(dragitem) {
@@ -41,10 +42,12 @@ export default {
 
 <style lang="scss">
 .songs {
-	max-width: 20em;
-	
+	max-width: 20rem;
+	&__headline {
+		color: #fff;
+	}
 }
 .flip-list-move {
-  transition: transform .7s;
+	transition: transform .7s;
 }
 </style>
