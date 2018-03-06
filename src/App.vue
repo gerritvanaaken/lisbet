@@ -12,6 +12,8 @@ import Songs from './components/Songs.vue';
 import Players from './components/Players.vue';
 import axios from 'axios';
 
+var draggingCountry = true;
+
 export default {
 	name: 'app',
 	components: {

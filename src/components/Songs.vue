@@ -1,7 +1,7 @@
 <template>
 	<div class="songs">
 		<h2 class="songs__headline">Liste der Songs</h2>
-		<draggable :list="songs" class="dragArea" :options="{sort: false, group: {name: 'songs', pull: 'clone', put: false}}">
+		<draggable :list="songs" @start="globalStoreCandidate" @end="globalRemoveCandidate" :options="{sort: false, group: {name: 'songs', pull: 'clone', put: false}}">
 			<transition-group name="flip-list" tag="ul" class="songs__list">
 				<bet-song v-for="(song, index) in songs" :song="song" :key="song.country" :index="index" ></bet-song>
 			</transition-group>
@@ -24,9 +24,16 @@ export default {
 			type: Array
 		}
 	},
-	data () {
-		return {
-	
+	data() {
+		return {}
+	},
+	methods: {
+		globalStoreCandidate(dragitem) {
+			// global storage :-( maybe use vuex later, seems over-engineered, though
+			this.$root.$data.draggingCountry = dragitem.clone.getElementsByClassName('song__countrycode')[0].innerText;
+		},
+		globalRemoveCandidate() {
+			this.$root.$data.draggingCountry = '';
 		}
 	}
 }
