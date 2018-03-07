@@ -2,7 +2,7 @@
 	<div id="app" class="app">
 		<header class="app__header">
 			<h1 class="app__headline">#lisbet</h1>
-			<button class="app__button" @click="addPlayer()">Add New Player</button>
+			<button v-if="!songdata.meta.bettingLocked" class="app__button" @click="addPlayer()">Add New Player</button>
 			<div class="app__subline">The betting game for Lisbon 2018</div>
 		</header>
 		<div class="app__betarea">
@@ -28,7 +28,7 @@ export default {
 	methods: {
 		fetchSongs () {
 			axios.get('http://localhost:8080/src/assets/songs.json').then(response => {
-				if (response.data.meta.stage !== 'init') {
+				if (response.data.meta.bettingLocked) {
 					response.data.songs.sort(function(a, b){
 						return b.points - a.points;
 					});
@@ -40,7 +40,7 @@ export default {
 		},
 		addPlayer() {
 			this.players.push({
-				name: 'New Player',
+				name: 'Change name here',
 				ranking: []
 			})
 		}

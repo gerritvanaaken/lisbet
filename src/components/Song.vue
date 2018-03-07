@@ -4,11 +4,10 @@
 			<img class="song__flag" v-bind:src="'./src/assets/flags/' + song.country + '.svg'" width="30" height="20" />
 			<span class="song__countrycode">{{ song.country }}</span>
 		</div>
-		<h3 class="song__title">{{ song.title }}</h3>
+		<h3 class="song__title">{{ song.title }} <span class="song__points" v-if="finished">{{ song.points }}</span></h3>
 		<div class="song__artist">{{ song.artist }}</div>
-		<div class="song__order">{{ song.order }}</div>
-		<div class="song__points">{{ song.points }}</div>
 		<div class="song__rank">{{ index + 1 }}</div>
+		<button class="song__delete" v-if="!locked" @click="deleteSong" title="Remove song">&times;</button>
 	</li>
 </template>
 
@@ -16,12 +15,23 @@
 export default {
 	name: 'song',
 	props: {
+		finished: {
+			type: Boolean
+		},
+		locked: {
+			type: Boolean
+		},
 		song: {
 			type: Object
 		},
 		index: {
 			type: Number
 		}
+	},
+	methods: {
+		deleteSong() {
+			this.$emit('delete');
+		},
 	}
 }
 </script>
@@ -37,11 +47,17 @@ export default {
 	border-radius: .2rem;
 	cursor: e-move;
 	cursor: e-resize;
+	&:last-child {
+		margin-bottom: 0;
+	}
 	&:focus, &:hover {
 		background: linear-gradient(135deg, #fff 0, #aaa 100%);
 	}
 	.player & {
 		cursor: ns-resize;
+	}
+	.songs & .song__delete {
+		display: none;
 	}
 	&__country {
 		display: flex;
@@ -83,8 +99,20 @@ export default {
 		font-weight: 400;
 	}
 	
-	&__order, &__points {
+	&__order {
 		display: none;
+	}
+	&__points {
+		background: #f80;
+		color: #fff;
+		font-size: .7rem;
+		padding: .08em .5em;
+		border-radius: 2em;
+		
+		.player & {
+			display: none;
+		}
+		
 	}
 	&__rank {
 		font-weight: 100;
@@ -97,9 +125,33 @@ export default {
 		line-height: 1;
 		color: rgba(0,0,0,0.2);
 		.player & {
-			display: none;
+			//display: none;
 		}
 	}
+	&__delete {
+		background: none;
+		border: none;
+		font-weight: 100;
+		position: absolute;
+		right: .3rem;
+		top: .3rem;
+		line-height: .5;
+		font-size: 1.7rem;
+		cursor: pointer;
+		outline: none;
+		&:hover {
+			font-weight: 400;
+		}
+	}
+	&.sortable-ghost {
+		background: none;
+		box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
+		& * {
+			opacity: 0;
+		}
+	}
+
+
 
 }
 

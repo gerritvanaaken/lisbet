@@ -1,13 +1,16 @@
 <template>
 	<article class="players__player player">
 
-		<h3 class="player__name" @click="toggleNameChange">{{ player.name }}</h3>
-		<input type="text" v-model="player.name" v-if="namechange" @blur="toggleNameChange" autofocus />
-		<h2 v-if="meta.stage !== 'init'">Rank Difference: {{ rankDifference }}</h2>
+		<header class="player__header">
+			<input class="player__name" type="text" v-model="player.name" />
+			<div class="player__score" v-if="meta.bettingLocked && player.ranking.length === songs.length">{{ score }}</div>
+			<button v-if="!meta.bettingLocked" class="player__button player__button--import" @click="importSongs" title="Copy songlist">=</button>
+			<button v-if="!meta.bettingLocked"  class="player__button player__button--delete" @click="deletePlayer" title="Remove this player">&times;</button>
+		</header>
 
-		<draggable v-model="player.ranking" :options="{group: {name: 'playerlist', put: checkForDuplicates, pull: false}, animation: 300}">
+		<draggable v-model="player.ranking" :options="{group: {name: 'playerlist', put: checkForDuplicates, pull: false, revertClone: true}, animation: 300}">
 			<transition-group name="flip-list" tag="ul" class="player__songlist">
-				<bet-song v-for="(song, index) in player.ranking" :song="song" :key="song.country" :index="index"></bet-song>
+				<bet-song v-for="(song, index) in player.ranking" :song="song" :key="song.country" :index="index" :locked="meta.bettingLocked" @delete="deleteSong(index)"></bet-song>
 			</transition-group>
 		</draggable>
 	</article>
@@ -57,10 +60,30 @@ export default {
 				}
 			});
 			return output;
+		},
+		deletePlayer() {
+			this.$emit('delete');
+		},
+		deleteSong(index) {
+			this.player.ranking.splice(index, 1);
+		},
+		importSongs() {
+			var mysongs = this.player.ranking;
+			this.songs.forEach(function(original) {
+				var importsong = true;
+				mysongs.forEach(function(mysong) {
+					if (original.country === mysong.country) {
+						importsong = false;
+					}
+				});
+				if (importsong) {
+					mysongs.push(original);
+				}
+			});
 		}
 	},
 	computed: {
-		rankDifference() {
+		score() {
 			var rankDiff = 0;
 			var v = this;
 			v.songs.forEach(function(song, i){
@@ -71,7 +94,7 @@ export default {
 				});
 				
 			});
-			return rankDiff;
+			return 1000 - rankDiff;
 		}
 	}
 }
@@ -84,19 +107,62 @@ export default {
 	min-width: 10rem;
 	max-width: 30rem;
 	transition: all .4s;
-	border-left: 1px solid #aaa;
-	padding: 1rem;
+	padding: 1rem .5rem 0 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: stretch;
 	height: calc(100% - 1.5rem);
-	&:last-child {
-		border-right: 1px solid #aaa;
+	&:first-child {
+		border-left: 1px solid #aaa;
+	}
+	&__header {
+		position: relative;
+		display: flex;
+		width: 100%;
+		justify-content: flex-end;
+	}
+	&__button {
+		background: #fff;
+		border: none;
+		display: block;
+		width: 1em;
+		line-height: .95;
+		color: #333;
+		border-radius: 50%;
+		font-weight: 100;
+		font-size: 1.5rem;
+		cursor: pointer;
+		outline: none;
+		margin-left: .4rem;
+		&:hover, &:focus {
+			background: rgba(255,255,255,.8);
+		}
+	}
+	&__score {
+		background: #c09;
+		color: #fff;
+		font-size: .9rem;
+		padding: .08em .5em;
+		border-radius: 2em;
 	}
 	&__name {
 		font-weight: 700;
 		color: #fff;
+		outline: none;
+		border: none;
+		background: none;
+		padding: 0;
+		margin: 0;
+		line-height: 1;
+		width: 60%;
+		position: absolute;
+		left: 0;
+		&:focus {
+			box-shadow: inset 0 0 0 1px rgba(255,255,255,.5);
+			padding-left: .5em;
+		}
+
 	}
 	& > div {
 		height: 100%;
@@ -125,6 +191,7 @@ export default {
 
 		}
 	}
+
 	
 }
 

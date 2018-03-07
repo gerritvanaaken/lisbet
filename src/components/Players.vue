@@ -1,6 +1,6 @@
 <template>
 	<section class="players">
-		<bet-player v-for="(player, index) in players" :key="index" :player="player" :songs="songs" :meta="meta"></bet-player>
+		<bet-player v-for="(player, index) in players" :key="index" :player="player" :songs="songs" :meta="meta" @delete="deletePlayer(index)"></bet-player>
 	</section>
 </template>
 
@@ -21,6 +21,11 @@ export default {
 		meta: {
 			type: Object
 		}
+	},
+	methods: {
+		deletePlayer(index) {
+			this.players.splice(index, 1);
+		}
 	}
 }
 </script>
@@ -30,8 +35,8 @@ export default {
 	margin: 0 0 0 1rem;
 	display: flex;
 	justify-content: stretch;
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
+	// overflow-x: auto;
+	// -webkit-overflow-scrolling: touch;
 
 }
 
