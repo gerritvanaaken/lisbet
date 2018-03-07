@@ -3,9 +3,9 @@
 
 		<header class="player__header">
 			<input class="player__name" type="text" v-model="player.name" />
-			<div class="player__score" v-if="meta.bettingLocked && player.ranking.length === songs.length">{{ score }}</div>
+			<div class="player__score" title="Player’s score. Maximum is 1.000" v-if="meta.bettingLocked && player.ranking.length === songs.length">{{ score }}</div>
 			<button v-if="!meta.bettingLocked" class="player__button player__button--import" @click="importSongs" title="Copy songlist">=</button>
-			<button v-if="!meta.bettingLocked"  class="player__button player__button--delete" @click="deletePlayer" title="Remove this player">&times;</button>
+			<button v-if="!meta.bettingLocked" class="player__button player__button--delete" @click="deletePlayer" title="Remove this player">&times;</button>
 		</header>
 
 		<draggable v-model="player.ranking" :options="{group: {name: 'playerlist', put: checkForDuplicates, pull: false, revertClone: true}, animation: 300}">
@@ -145,6 +145,7 @@ export default {
 		font-size: .9rem;
 		padding: .08em .5em;
 		border-radius: 2em;
+		cursor: help;
 	}
 	&__name {
 		font-weight: 700;

@@ -6,7 +6,7 @@
 		</div>
 		<h3 class="song__title">{{ song.title }} <span class="song__points" v-if="finished">{{ song.points }}</span></h3>
 		<div class="song__artist">{{ song.artist }}</div>
-		<div class="song__rank">{{ index + 1 }}</div>
+		<div class="song__rank" :class="{ 'song__rank--locked': locked, 'song__rank--finished': finished }">{{ index + 1 }}</div>
 		<button class="song__delete" v-if="!locked" @click="deleteSong" title="Remove song">&times;</button>
 	</li>
 </template>
@@ -125,8 +125,12 @@ export default {
 		line-height: 1;
 		color: rgba(0,0,0,0.2);
 		.player & {
-			//display: none;
+			right: 1.6rem;
+			&--locked {
+				right: .7rem;
+			}
 		}
+
 	}
 	&__delete {
 		background: none;
