@@ -1,12 +1,12 @@
 <template>
-	<li class="songs__song song">
+	<li class="songs__song song" :class="{ 'song--locked': locked }">
 		<div class="song__country">
 			<img class="song__flag" v-bind:src="'./src/assets/flags/' + song.country + '.svg'" width="30" height="20" />
 			<span class="song__countrycode">{{ song.country }}</span>
 		</div>
-		<h3 class="song__title">{{ song.title }} <span class="song__points" v-if="finished">{{ song.points }}</span></h3>
+		<h3 class="song__title">{{ song.title }} <span class="song__points" v-if="locked">{{ song.points }}</span></h3>
 		<div class="song__artist">{{ song.artist }}</div>
-		<div class="song__rank" :class="{ 'song__rank--locked': locked, 'song__rank--finished': finished }">{{ index + 1 }}</div>
+		<div class="song__rank" :class="{ 'song__rank--locked': locked }">{{ index + 1 }}</div>
 		<button class="song__delete" v-if="!locked" @click="deleteSong" title="Remove song">&times;</button>
 	</li>
 </template>
@@ -52,6 +52,16 @@ export default {
 	}
 	&:focus, &:hover {
 		background: linear-gradient(135deg, #fff 0, #aaa 100%);
+	}
+	&--locked {
+		cursor: default!important;
+		background: linear-gradient(135deg, rgba(255,255,255,.9) 0, rgba(255,255,255,.4) 100%)!important;
+		pointer-events: none;
+
+		& * {
+			pointer-events: none;
+			user-select: none;
+		}
 	}
 	.player & {
 		cursor: ns-resize;
@@ -103,11 +113,15 @@ export default {
 		display: none;
 	}
 	&__points {
-		background: #f80;
+		background: rgba(0,0,0,0.3);
 		color: #fff;
 		font-size: .7rem;
 		padding: .08em .5em;
 		border-radius: 2em;
+		position: relative;
+		top: -.1em;
+		margin-left: .2em;
+
 		
 		.player & {
 			display: none;

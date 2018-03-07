@@ -3,7 +3,7 @@
 		"formatversion": "1",
 		"day": "2017-05-13",
 		"showtype": "Grand Finale",
-		"bettingLocked": true,
+		"bettingLocked": false,
 		"finished": false
 	},
 	"songs": [

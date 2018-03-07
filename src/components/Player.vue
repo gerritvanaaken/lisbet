@@ -3,7 +3,8 @@
 
 		<header class="player__header">
 			<input class="player__name" type="text" v-model="player.name" />
-			<div class="player__score" title="Player’s score. Maximum is 1.000" v-if="meta.bettingLocked && player.ranking.length === songs.length">{{ score }}</div>
+			<div title="Completed X of Y participants" v-if="!meta.bettingLocked || this.player.ranking.length !== this.songs.length" class="player__complete" :class="{ 'player__complete--yes': (this.player.ranking.length === this.songs.length)}">{{ player.ranking.length }}/{{ songs.length }}</div>
+			<div class="player__score" title="Player’s score. Maximum is 1.000" v-if="meta.bettingLocked">{{ score }}</div>
 			<button v-if="!meta.bettingLocked" class="player__button player__button--import" @click="importSongs" title="Copy songlist">=</button>
 			<button v-if="!meta.bettingLocked" class="player__button player__button--delete" @click="deletePlayer" title="Remove this player">&times;</button>
 		</header>
@@ -84,6 +85,9 @@ export default {
 	},
 	computed: {
 		score() {
+			if (this.player.ranking.length !== this.songs.length) {
+				return 0;
+			}
 			var rankDiff = 0;
 			var v = this;
 			v.songs.forEach(function(song, i){
@@ -94,6 +98,7 @@ export default {
 				});
 				
 			});
+			
 			return 1000 - rankDiff;
 		}
 	}
@@ -139,6 +144,18 @@ export default {
 			background: rgba(255,255,255,.8);
 		}
 	}
+	&__complete {
+		background: rgba(255,255,255,.1);
+		color: #fff;
+		font-size: .9rem;
+		padding: .08em .5em;
+		border-radius: 2em;
+		cursor: help;
+		&--yes {
+			background: #0c0;
+		}
+
+	}
 	&__score {
 		background: #c09;
 		color: #fff;
@@ -146,6 +163,7 @@ export default {
 		padding: .08em .5em;
 		border-radius: 2em;
 		cursor: help;
+		margin-left: .3rem;
 	}
 	&__name {
 		font-weight: 700;
