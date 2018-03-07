@@ -3,14 +3,15 @@
 		"formatversion": "1",
 		"day": "2017-05-13",
 		"showtype": "Grand Finale",
-		"stage": "init"
+		"bettingLocked": false,
+		"finished": false
 	},
 	"songs": [
 		{
 			"country": "ISR",
 			"order": 1,
 			"points": 39,
-			"title": "I Feel Alive when you are arounf",
+			"title": "I Feel Alive",
 			"artist": "Imri Ziv"
 		},
 		{
@@ -23,7 +24,7 @@
 		{
 			"country": "BLR",
 			"order": 3,
-			"points": 3083,
+			"points": 83,
 			"title": "Story Of My Life",
 			"artist": "NAVI"
 		},
