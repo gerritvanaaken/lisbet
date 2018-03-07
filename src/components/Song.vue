@@ -33,7 +33,7 @@ export default {
 	padding: .5rem;
 	background: linear-gradient(135deg, rgba(255,255,255,.9) 0, rgba(255,255,255,.4) 100%);
 	box-shadow: 0 0 1rem rgba(0,0,0,0.5);
-	margin: .5rem 0;
+	margin: 0 0 .5rem 0;
 	border-radius: .2rem;
 	cursor: e-move;
 	cursor: e-resize;
@@ -68,8 +68,8 @@ export default {
 		font-weight: bold;
 	}
 	&__title {
-		font-style: italic;
-		margin-top: .1rem;
+		font-weight: 200;
+		
 		text-overflow: ellipsis;
 		overflow: hidden;
 		width: calc(100% - 3.5rem);
@@ -80,18 +80,20 @@ export default {
 		overflow: hidden;
 		width: calc(100% - 3.5rem);
 		white-space: nowrap;
+		font-weight: 400;
 	}
 	
 	&__order, &__points {
 		display: none;
 	}
 	&__rank {
+		font-weight: 100;
 		position: absolute;
 		top: .12rem;
 		right: 3.5rem;
-		letter-spacing: -.07em;
+		letter-spacing: -.05em;
 		z-index: 0;
-		font-size: 3rem;
+		font-size: 3.2rem;
 		line-height: 1;
 		color: rgba(0,0,0,0.2);
 		.player & {

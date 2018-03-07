@@ -3,7 +3,7 @@
 
 		<h3 class="player__name" @click="toggleNameChange">{{ player.name }}</h3>
 		<input type="text" v-model="player.name" v-if="namechange" @blur="toggleNameChange" autofocus />
-		<h2>Rank Difference: {{ rankDifference }}</h2>
+		<h2 v-if="meta.stage !== 'init'">Rank Difference: {{ rankDifference }}</h2>
 
 		<draggable v-model="player.ranking" :options="{group: {name: 'playerlist', put: checkForDuplicates, pull: false}, animation: 300}">
 			<transition-group name="flip-list" tag="ul" class="player__songlist">
@@ -28,6 +28,9 @@ export default {
 			type: Array
 		},
 		player: {
+			type: Object
+		},
+		meta: {
 			type: Object
 		}
 		
@@ -77,14 +80,52 @@ export default {
 <style lang="scss">
 
 .player {
-	border: 1px solid #aaa;
-	box-shadow: 0 0 1rem rgba(0,0,0,0.2);
-	margin: 1em 0;
-	border-radius: .2rem;
+	width: 18vw;
+	min-width: 10rem;
+	max-width: 30rem;
+	transition: all .4s;
+	border-left: 1px solid #aaa;
 	padding: 1rem;
-	&__songlist {
-		min-height: 5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: stretch;
+	height: calc(100% - 1.5rem);
+	&:last-child {
+		border-right: 1px solid #aaa;
 	}
+	&__name {
+		font-weight: 700;
+		color: #fff;
+	}
+	& > div {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: stretch;
+	}
+	&__songlist {
+		background: rgba(255,255,255,.15);
+		border-radius: .2rem;
+		margin-top: .5rem;
+		height: 100%;
+		position: relative;
+		&:empty:after {
+			content: "Drag songs here!";
+			display: block;
+			position: absolute;
+			top: 20vh;
+			left: 20%;
+			right: 20%;
+			color: rgba(255,255,255,.5);
+			font-weight: 100;
+			font-size: 2rem;
+			text-align: center;
+
+		}
+	}
+	
 }
 
 </style>

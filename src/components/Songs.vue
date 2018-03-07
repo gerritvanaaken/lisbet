@@ -1,9 +1,9 @@
 <template>
 	<div class="songs">
-		<h2 class="songs__headline">Participants {{ meta.showtype }}</h2>
+		<h2 class="songs__headline" v-if="meta">Participants {{ meta.showtype }}</h2>
 		<draggable :list="songs" @start="globalStoreCandidate" @end="globalRemoveCandidate" :options="{sort: false, group: {name: 'songs', pull: 'clone', put: false}, animation: 300}">
 			<transition-group name="flip-list" tag="ul" class="songs__list">
-				<bet-song v-for="(song, index) in songs" :song="song" :key="song.country" :index="index" ></bet-song>
+				<bet-song v-for="(song, index) in songs" :song="song" :key="song.country" :index="index"></bet-song>
 			</transition-group>
 		</draggable>
 	</div>
@@ -42,12 +42,21 @@ export default {
 
 <style lang="scss">
 .songs {
+	position: relative;
+	margin-top: 1rem;
 	max-width: 20rem;
+	
 	&__headline {
 		color: #fff;
+		font-weight: 700;
 	}
 	.flip-list-move {
 		transition: transform .7s;
+	}
+	&__list {
+		margin-top: .5rem;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 }
 

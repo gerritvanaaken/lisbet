@@ -1,10 +1,6 @@
 <template>
 	<section class="players">
-		<h2 class="players__headline">Who will win?</h2>
-		<button @click="addPlayer()">Add New Player</button>
-		<div class="players__list">
-			<bet-player v-for="(player, index) in players" :key="index" :player="player" :songs="songs"></bet-player>
-		</div>
+		<bet-player v-for="(player, index) in players" :key="index" :player="player" :songs="songs" :meta="meta"></bet-player>
 	</section>
 </template>
 
@@ -21,19 +17,9 @@ export default {
 		},
 		songs: {
 			type: Array
-		}
-	},
-	data () {
-		return {
-	
-		}
-	},
-	methods: {
-		addPlayer() {
-			this.players.push({
-				name: 'New Player',
-				ranking: []
-			})
+		},
+		meta: {
+			type: Object
 		}
 	}
 }
@@ -41,10 +27,12 @@ export default {
 
 <style lang="scss">
 .players {
-	margin: 0 0 0 3rem;
-	&__list {
-		display: flex;
-	}
+	margin: 0 0 0 1rem;
+	display: flex;
+	justify-content: stretch;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+
 }
 
 </style>

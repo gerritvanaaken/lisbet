@@ -3,13 +3,13 @@
 		"formatversion": "1",
 		"day": "2017-05-13",
 		"showtype": "Grand Finale",
-		"stage": "finale"
+		"stage": "init"
 	},
 	"songs": [
 		{
 			"country": "ISR",
 			"order": 1,
-			"points": 939,
+			"points": 39,
 			"title": "I Feel Alive when you are arounf",
 			"artist": "Imri Ziv"
 		},
@@ -170,14 +170,14 @@
 		{
 			"country": "SWE",
 			"order": 24,
-			"points": 344,
+			"points": 9344,
 			"title": "I Can’t Go On",
 			"artist": "Robin Bengtsson"
 		},
 		{
 			"country": "BUL",
 			"order": 25,
-			"points": 615,
+			"points": 9615,
 			"title": "Meautiful Mess",
 			"artist": "Kristian Kostow"
 		},
