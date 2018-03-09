@@ -49,10 +49,23 @@ export default {
 		this.fetchSongs();
 		var songFetcher = setInterval(this.fetchSongs, 2000);
 	},
+	mounted () {
+		if (localStorage.getItem('players')) {
+			this.players = JSON.parse(localStorage.getItem('players'));
+		}
+	},
 	data () {
 		return {
 			songdata: {},
 			players: []
+		}
+	},
+	watch: {
+		players: {
+			handler() {
+				localStorage.setItem('players', JSON.stringify(this.players))
+			},
+			deep: true
 		}
 	}
 }
