@@ -56,7 +56,16 @@ export default {
 	},
 	data () {
 		return {
-			songdata: {},
+			songdata: {
+				"meta": {
+					"formatversion": "1",
+					"day": "XXXX-XX-XX",
+					"showtype": "XXX",
+					"bettingLocked": false,
+					"finished": false
+				},
+				"songs": []
+			},
 			players: []
 		}
 	},
