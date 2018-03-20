@@ -32,11 +32,11 @@ export default {
 
 <style lang="scss">
 .players {
-	margin: 0 0 0 1rem;
+	border-left: 1px solid #aaa;
+	margin: 0 0 0 .5rem;
 	display: flex;
-	justify-content: stretch;
-	// overflow-x: auto;
-	// -webkit-overflow-scrolling: touch;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
 
 }
 

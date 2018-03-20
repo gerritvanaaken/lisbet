@@ -3,7 +3,7 @@
 		<h2 class="songs__headline" v-if="!meta.bettingLocked">Participants: {{ meta.showtype }}</h2>
 		<h2 class="songs__headline" v-if="meta.bettingLocked && !meta.finished">Voting in progress …</h2>
 		<h2 class="songs__headline" v-if="meta.finished">Results: {{ meta.showtype }}</h2>
-		<draggable :list="songs" @start="globalStoreCandidate" @end="globalRemoveCandidate" :options="{sort: false, group: {name: 'songs', pull: 'clone', put: false}, animation: 300}">
+		<draggable :list="songs" @start="globalStoreCandidate" @end="globalRemoveCandidate" :options="{sort: false, group: {name: 'songs', pull: 'clone', put: false}, animation: 300}" class="songs__scroller">
 			<transition-group name="flip-list" tag="ul" class="songs__list">
 				<bet-song v-for="(song, index) in songs" :song="song" :key="song.country" :index="index" :locked="meta.bettingLocked" :finished="meta.finished"></bet-song>
 			</transition-group>
@@ -45,20 +45,34 @@ export default {
 <style lang="scss">
 .songs {
 	position: relative;
-	margin-top: 1rem;
-	max-width: 20rem;
+	width: 320px;
+	@media only screen and (max-width: 550px) {
+		width: 45vw;
+	}
+	margin: 1rem 0 1rem 1rem;
 	
 	&__headline {
 		color: #fff;
 		font-weight: 700;
+		white-space: nowrap;
+		width: 100%;
+		overflow-x: hidden;
+		text-overflow: ellipsis;
 	}
 	.flip-list-move {
 		transition: transform .7s;
 	}
-	&__list {
+	&__scroller {
 		margin-top: .5rem;
-		// overflow-y: auto;
-		// -webkit-overflow-scrolling: touch;
+		height: calc(100vh - 7rem);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+	&__list {
+		margin-right: .5rem;
+		@media only screen and (min-width: 550px) {
+			margin-right: 1rem;
+		}
 	}
 }
 

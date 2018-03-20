@@ -9,7 +9,7 @@
 			<button v-if="!meta.bettingLocked" class="player__button player__button--delete" @click="deletePlayer" title="Remove this player">&times;</button>
 		</header>
 
-		<draggable v-model="player.ranking" :options="{group: {name: 'playerlist', put: checkForDuplicates, pull: false, revertClone: true}, animation: 300}">
+		<draggable v-model="player.ranking" :options="{group: {name: 'playerlist', put: checkForDuplicates, pull: false, revertClone: true}, animation: 300}" class="player__scroller">
 			<transition-group name="flip-list" tag="ul" class="player__songlist">
 				<bet-song v-for="(song, index) in player.ranking" :song="song" :key="song.country" :index="index" :locked="meta.bettingLocked" @delete="deleteSong(index)"></bet-song>
 			</transition-group>
@@ -108,23 +108,21 @@ export default {
 <style lang="scss">
 
 .player {
-	width: 18vw;
-	min-width: 10rem;
-	max-width: 30rem;
+	width: 250px;
+	@media only screen and (max-width: 550px) {
+		width: 45vw;
+	}
 	transition: all .4s;
-	padding: 1rem .5rem 0 1rem;
+	padding: 1rem 0 0 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: stretch;
-	height: calc(100% - 1.5rem);
-	&:first-child {
-		border-left: 1px solid #aaa;
-	}
+	
 	&__header {
 		position: relative;
 		display: flex;
-		width: 100%;
+		width: calc(100% - 1rem);
 		justify-content: flex-end;
 	}
 	&__button {
@@ -174,17 +172,22 @@ export default {
 		padding: 0;
 		margin: 0;
 		line-height: 1;
-		width: 60%;
+		width: calc(100% - 8rem);
 		position: absolute;
 		left: 0;
+		cursor: pointer;
 		&:focus {
+			cursor: text;
 			box-shadow: inset 0 0 0 1px rgba(255,255,255,.5);
 			padding-left: .5em;
 		}
 
 	}
-	& > div {
-		height: 100%;
+	&__scroller {
+		margin-top: .5rem;
+		height: calc(100vh - 7rem);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
@@ -193,9 +196,12 @@ export default {
 	&__songlist {
 		background: rgba(255,255,255,.15);
 		border-radius: .2rem;
-		margin-top: .5rem;
 		height: 100%;
 		position: relative;
+		margin-right: .5rem;
+		@media only screen and (min-width: 550px) {
+			margin-right: 1rem;
+		}
 		&:empty:after {
 			content: "Drag songs here!";
 			display: block;

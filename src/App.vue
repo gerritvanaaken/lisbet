@@ -40,7 +40,7 @@ export default {
 		},
 		addPlayer() {
 			this.players.push({
-				name: 'Change name here',
+				name: 'Player '+ (this.players.length + 1),
 				ranking: []
 			})
 		}
@@ -110,21 +110,20 @@ export default {
 }
 
 body {
-	padding: 1.5rem;
 	background: #346;
+	overflow: hidden;
 }
 
 .app {
 	font-family: 'robotoslab', sans-serif;
 	&__header {
-		padding: .5rem 1.5rem;
+		padding: .5rem 1rem;
 		background: rgba(0,0,0,0.5);
-		margin: -1.5rem -1.5rem 0;
 		color: #fff;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		width: 100%;
+		width: calc(100% - 2rem);
 	}
 	&__headline {
 		text-transform: uppercase;
@@ -135,6 +134,9 @@ body {
 	&__subline {
 		text-transform: uppercase;
 		letter-spacing: .1em;
+		@media only screen and (max-width: 900px) {
+			display: none;
+		}
 	}
 	&__button {
 		background: none;
@@ -145,6 +147,11 @@ body {
 		padding: .2em 1em;
 		cursor: pointer;
 		outline: none;
+		@media only screen and (max-width: 400px) {
+			width: 3.2rem;
+			overflow: hidden;
+			white-space: nowrap;
+		}
 		&:before {
 			content: '+';
 			background: #fff;
@@ -155,6 +162,9 @@ body {
 			margin-right: .5em;
 			border-radius: 50%;
 			display: inline-block;
+			@media only screen and (max-width: 400px) {
+				margin-right: 3rem;
+			}
 		}
 		&:focus, &:hover {
 			background: rgba(255,255,255,.2);
@@ -163,7 +173,6 @@ body {
 	&__betarea {
 		display: flex;
 		align-items: stretch;
-
 	}
 }
 
