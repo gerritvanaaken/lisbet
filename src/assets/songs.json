@@ -9,35 +9,35 @@
 	"songs": [
 		{
 			"country": "SUI",
-			"order": 1,
+			"order": 17,
 			"points": 0,
 			"title": "Stones",
 			"artist": "ZiBBZ"
 		},
 		{
 			"country": "FIN",
-			"order": 2,
+			"order": 15,
 			"points": 0,
 			"title": "Monsters",
 			"artist": "Saara Aalto"
 		},
 		{
 			"country": "BLR",
-			"order": 3,
+			"order": 8,
 			"points": 0,
 			"title": "Forever",
 			"artist": "ALEKSEEV"
 		},
 		{
 			"country": "BUL",
-			"order": 4,
+			"order": 10,
 			"points": 0,
 			"title": "Bones",
 			"artist": "EQUINOX"
 		},
 		{
 			"country": "AUT",
-			"order": 5,
+			"order": 13,
 			"points": 0,
 			"title": "Nobody But You",
 			"artist": "Cesár Sampson"
@@ -51,91 +51,91 @@
 		},
 		{
 			"country": "ALB",
-			"order": 7,
+			"order": 3,
 			"points": 0,
 			"title": "Mall",
 			"artist": "Eugent Bushpepa"
 		},
 		{
 			"country": "IRL",
-			"order": 8,
+			"order": 18,
 			"points": 0,
 			"title": "Together",
 			"artist": "Ryan O'Shaughnessy"
 		},
 		{
 			"country": "ARM",
-			"order": 9,
+			"order": 16,
 			"points": 0,
 			"title": "Qami",
 			"artist": "Sevak Khanagyan"
 		},
 		{
 			"country": "CYP",
-			"order": 10,
+			"order": 19,
 			"points": 0,
 			"title": "Fuego",
 			"artist": "Eleni Foureira"
 		},
 		{
 			"country": "CZE",
-			"order": 11,
+			"order": 5,
 			"points": 0,
 			"title": "Lie To Me",
 			"artist": "Mikolas Josef"
 		},
 		{
 			"country": "BEL",
-			"order": 12,
+			"order": 4,
 			"points": 0,
 			"title": "A Matter Of Time",
 			"artist": "Sennek"
 		},
 		{
 			"country": "CRO",
-			"order": 13,
+			"order": 12,
 			"points": 0,
 			"title": "Crazy",
 			"artist": "Franka"
 		},
 		{
 			"country": "ISL",
-			"order": 14,
+			"order": 2,
 			"points": 0,
 			"title": "Our Choice",
 			"artist": "Ari Ólafsson"
 		},
 		{
 			"country": "AZE",
-			"order": 15,
+			"order": 1,
 			"points": 0,
 			"title": "X My Heart",
 			"artist": "Aisel"
 		},
 		{
 			"country": "GRE",
-			"order": 16,
+			"order": 14,
 			"points": 0,
 			"title": "Oniro Mou",
 			"artist": "Yianna Terzi"
 		},
 		{
 			"country": "ISR",
-			"order": 17,
+			"order": 7,
 			"points": 0,
 			"title": "TOY",
 			"artist": "Netta"
 		},
 		{
 			"country": "EST",
-			"order": 18,
+			"order": 9,
 			"points": 0,
 			"title": "La Forza",
 			"artist": "Elina Nechayeva"
 		},
 		{
 			"country": "MKD",
-			"order": 19,
+			"order": 11,
 			"points": 0,
 			"title": "Lost And Found",
 			"artist": "Eye Cue"
