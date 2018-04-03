@@ -27,7 +27,7 @@ export default {
 	},
 	methods: {
 		fetchSongs () {
-			axios.get('http://localhost:8080/src/assets/songs.json').then(response => {
+			axios.get('/src/assets/songs.json').then(response => {
 				if (response.data.meta.bettingLocked) {
 					response.data.songs.sort(function(a, b){
 						return b.points - a.points;
