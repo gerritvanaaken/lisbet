@@ -109,8 +109,10 @@ export default {
 
 .player {
 	width: 250px;
+	min-width: 250px;
 	@media only screen and (max-width: 550px) {
 		width: 45vw;
+		min-width: 45vw;
 	}
 	transition: all .4s;
 	padding: 1rem 0 0 1rem;
