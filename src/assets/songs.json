@@ -1,193 +1,144 @@
 {
 	"meta": {
 		"formatversion": "1",
-		"day": "2017-05-13",
-		"showtype": "Grand Finale",
+		"day": "2018-05-08",
+		"showtype": "First Semi-Final",
 		"bettingLocked": false,
 		"finished": false
 	},
 	"songs": [
 		{
-			"country": "ISR",
+			"country": "SUI",
 			"order": 1,
-			"points": 939,
-			"title": "I Feel Alive",
-			"artist": "Imri Ziv"
+			"points": 0,
+			"title": "Stones",
+			"artist": "ZiBBZ"
 		},
 		{
-			"country": "POL",
+			"country": "FIN",
 			"order": 2,
-			"points": 64,
-			"title": "Flashlight",
-			"artist": "Kasia Moś"
+			"points": 0,
+			"title": "Monsters",
+			"artist": "Saara Aalto"
 		},
 		{
 			"country": "BLR",
 			"order": 3,
-			"points": 83,
-			"title": "Story Of My Life",
-			"artist": "NAVI"
+			"points": 0,
+			"title": "Forever",
+			"artist": "ALEKSEEV"
+		},
+		{
+			"country": "BUL",
+			"order": 4,
+			"points": 0,
+			"title": "Bones",
+			"artist": "EQUINOX"
 		},
 		{
 			"country": "AUT",
-			"order": 4,
-			"points": 93,
-			"title": "Running on Air",
-			"artist": "Nathan Trent"
+			"order": 5,
+			"points": 0,
+			"title": "Nobody But You",
+			"artist": "Cesár Sampson"
+		},
+		{
+			"country": "LTU",
+			"order": 6,
+			"points": 0,
+			"title": "When We're Old",
+			"artist": "Ieva Zasimauskaitė"
+		},
+		{
+			"country": "ALB",
+			"order": 7,
+			"points": 0,
+			"title": "Mall",
+			"artist": "Eugent Bushpepa"
+		},
+		{
+			"country": "IRL",
+			"order": 8,
+			"points": 0,
+			"title": "Together",
+			"artist": "Ryan O'Shaughnessy"
 		},
 		{
 			"country": "ARM",
-			"order": 5,
-			"points": 79,
-			"title": "Fly with Me",
-			"artist": "Artsvik"
-		},
-		{
-			"country": "NED",
-			"order": 6,
-			"points": 150,
-			"title": "Lights and Shadows",
-			"artist": "O’G3NE"
-		},
-		{
-			"country": "MDA",
-			"order": 7,
-			"points": 374,
-			"title": "Hey Mamma",
-			"artist": "SunStroke Project"
-		},
-		{
-			"country": "HUN",
-			"order": 8,
-			"points": 200,
-			"title": "Origo",
-			"artist": "Joci Pápai"
-		},
-		{
-			"country": "ITA",
 			"order": 9,
-			"points": 334,
-			"title": "Occidentali’s Karma",
-			"artist": "Francesco Gabbani"
+			"points": 0,
+			"title": "Qami",
+			"artist": "Sevak Khanagyan"
 		},
 		{
-			"country": "DEN",
+			"country": "CYP",
 			"order": 10,
-			"points": 77,
-			"title": "Where I Am",
-			"artist": "Anja Nissen"
+			"points": 0,
+			"title": "Fuego",
+			"artist": "Eleni Foureira"
 		},
 		{
-			"country": "POR",
+			"country": "CZE",
 			"order": 11,
-			"points": 758,
-			"title": "Amar Pelos Dois",
-			"artist": "Salvador Sobral"
+			"points": 0,
+			"title": "Lie To Me",
+			"artist": "Mikolas Josef"
 		},
 		{
-			"country": "AZE",
+			"country": "BEL",
 			"order": 12,
-			"points": 120,
-			"title": "Skeletons",
-			"artist": "Dihaj"
+			"points": 0,
+			"title": "A Matter Of Time",
+			"artist": "Sennek"
 		},
 		{
 			"country": "CRO",
 			"order": 13,
-			"points": 128,
-			"title": "My Friend",
-			"artist": "Jacques Houdek"
+			"points": 0,
+			"title": "Crazy",
+			"artist": "Franka"
 		},
 		{
-			"country": "AUS",
+			"country": "ISL",
 			"order": 14,
-			"points": 173,
-			"title": "Don’t Come Easy",
-			"artist": "Isaiah"
+			"points": 0,
+			"title": "Our Choice",
+			"artist": "Ari Ólafsson"
+		},
+		{
+			"country": "AZE",
+			"order": 15,
+			"points": 0,
+			"title": "X My Heart",
+			"artist": "Aisel"
 		},
 		{
 			"country": "GRE",
-			"order": 15,
-			"points": 77,
-			"title": "This Is Love",
-			"artist": "Demy"
-		},
-		{
-			"country": "ESP",
 			"order": 16,
-			"points": 5,
-			"title": "Do It for Your Lover",
-			"artist": "Manel Navarro"
+			"points": 0,
+			"title": "Oniro Mou",
+			"artist": "Yianna Terzi"
 		},
 		{
-			"country": "NOR",
+			"country": "ISR",
 			"order": 17,
-			"points": 158,
-			"title": "Grab the Moment",
-			"artist": "Jowst feat. Aleksander Walmann"
+			"points": 0,
+			"title": "TOY",
+			"artist": "Netta"
 		},
 		{
-			"country": "GBR",
+			"country": "EST",
 			"order": 18,
-			"points": 111,
-			"title": "Never Give Up on You!",
-			"artist": "Lucie Jones"
+			"points": 0,
+			"title": "La Forza",
+			"artist": "Elina Nechayeva"
 		},
 		{
-			"country": "CYP",
+			"country": "MKD",
 			"order": 19,
-			"points": 68,
-			"title": "Gravity",
-			"artist": "Hovig"
-		},
-		{
-			"country": "ROM",
-			"order": 20,
-			"points": 282,
-			"title": "Yodel It!",
-			"artist": "Ilinca feat. Alex Florea"
-		},
-		{
-			"country": "GER",
-			"order": 21,
-			"points": 6,
-			"title": "Perfect Life",
-			"artist": "Levina"
-		},
-		{
-			"country": "UKR",
-			"order": 22,
-			"points": 36,
-			"title": "Time",
-			"artist": "O. Torwald"
-		},
-		{
-			"country": "BEL",
-			"order": 23,
-			"points": 3363,
-			"title": "City Lights",
-			"artist": "Blanche"
-		},
-		{
-			"country": "SWE",
-			"order": 24,
-			"points": 9344,
-			"title": "I Can’t Go On",
-			"artist": "Robin Bengtsson"
-		},
-		{
-			"country": "BUL",
-			"order": 25,
-			"points": 9615,
-			"title": "Meautiful Mess",
-			"artist": "Kristian Kostow"
-		},
-		{
-			"country": "FRA",
-			"order": 26,
-			"points": 135,
-			"title": "Requiem",
-			"artist": "Alma"
+			"points": 0,
+			"title": "Lost And Found",
+			"artist": "Eye Cue"
 		}
 
 	]
