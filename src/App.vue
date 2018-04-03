@@ -32,6 +32,10 @@ export default {
 					response.data.songs.sort(function(a, b){
 						return b.points - a.points;
 					});
+				} else {
+					response.data.songs.sort(function(a, b){
+						return a.order - b.order;
+					});
 				}
 				this.songdata = response.data;
 			}).catch(error => {
