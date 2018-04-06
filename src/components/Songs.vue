@@ -46,11 +46,37 @@ export default {
 .songs {
 	position: relative;
 	width: 320px;
+	margin: 1rem 0 1rem 1rem;
 	@media only screen and (max-width: 550px) {
 		width: 45vw;
 	}
-	margin: 1rem 0 1rem 1rem;
-	
+	&:before {
+		border-radius: .2rem;
+		content: '';
+		position: absolute;
+		background-image: 
+			linear-gradient(rgba(#fff,.3) .1em, transparent .1em);
+		background-size: 100% 1.2em;
+		width: 1.6rem;
+		bottom: 0;
+		border-left: 1px solid rgba(#fff,.4);
+		border-right: 1px solid rgba(#fff,.4);
+		top: 1.8rem;
+		right: 0;
+	}
+	&:after {
+		content: '« »';
+		position: absolute;
+		font-size: 2rem;
+		color: #fff;
+		top: 50%;
+		font-weight: 700;
+		right: .62rem;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		transform-origin: 100% 50%;
+		transform: rotate(90deg) translateX(50%);
+	}
 	&__headline {
 		color: #fff;
 		font-weight: 700;
@@ -69,10 +95,7 @@ export default {
 		-webkit-overflow-scrolling: touch;
 	}
 	&__list {
-		margin-right: .5rem;
-		@media only screen and (min-width: 550px) {
-			margin-right: 1rem;
-		}
+		margin-right: 2rem;
 	}
 }
 

@@ -32,7 +32,6 @@ export default {
 
 <style lang="scss">
 .players {
-	border-left: 1px solid #aaa;
 	margin: 0 0 0 .5rem;
 	display: flex;
 	overflow-x: auto;

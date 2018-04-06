@@ -122,6 +122,12 @@ export default {
 	list-style: none;
 }
 
+html {
+	@media only screen and (max-width: 500px) {
+		font-size: .85rem;
+	}
+}
+
 body {
 	background: #346;
 	overflow: hidden;
