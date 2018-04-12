@@ -108,18 +108,47 @@ export default {
 <style lang="scss">
 
 .player {
+	position: relative;
 	width: 250px;
 	min-width: 250px;
-	@media only screen and (max-width: 550px) {
-		width: 45vw;
-		min-width: 45vw;
-	}
 	transition: all .4s;
 	padding: 1rem 0 0 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: stretch;
+	@media only screen and (max-width: 550px) {
+		width: 45vw;
+		min-width: 45vw;
+	}
+
+	&:before {
+		border-radius: .2rem;
+		content: '';
+		position: absolute;
+		background-image: 
+			linear-gradient(rgba(#fff,.3) .1em, transparent .1em);
+		background-size: 100% 1.2em;
+		width: 1.6rem;
+		bottom: 0;
+		border-left: 1px solid rgba(#fff,.4);
+		border-right: 1px solid rgba(#fff,.4);
+		top: 2.8rem;
+		right: 0;
+	}
+	&:after {
+		content: '« »';
+		position: absolute;
+		font-size: 2rem;
+		color: #fff;
+		top: 50%;
+		font-weight: 700;
+		right: .62rem;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		transform-origin: 100% 50%;
+		transform: rotate(90deg) translateX(50%);
+	}
 	
 	&__header {
 		position: relative;
@@ -186,7 +215,7 @@ export default {
 
 	}
 	&__scroller {
-		margin-top: .5rem;
+		margin-top: .4rem;
 		height: calc(100vh - 7rem);
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
@@ -200,10 +229,8 @@ export default {
 		border-radius: .2rem;
 		height: 100%;
 		position: relative;
-		margin-right: .5rem;
-		@media only screen and (min-width: 550px) {
-			margin-right: 1rem;
-		}
+		margin-right: 2rem;
+
 		&:empty:after {
 			content: "Drag songs here!";
 			display: block;
