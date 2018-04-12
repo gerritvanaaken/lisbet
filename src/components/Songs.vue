@@ -8,6 +8,10 @@
 				<bet-song v-for="(song, index) in songs" :song="song" :key="song.country" :index="index" :locked="meta.bettingLocked" :finished="meta.finished"></bet-song>
 			</transition-group>
 		</draggable>
+		<div class="songs__scrollers scrollers">
+			<button class="scrollers__button scrollers__button--up" @click="scrollUp">hoch</button>
+			<button class="scrollers__button scrollers__button--down" @click="scrollDown">runter</button>
+		</div>
 	</div>
 </template>
 
@@ -37,6 +41,16 @@ export default {
 		},
 		globalRemoveCandidate() {
 			this.$root.$data.draggingCountry = '';
+		},
+		scrollUp() {
+			var scroller = this.$el.getElementsByClassName('songs__scroller')[0];
+			var offset = scroller.scrollTop;
+			scroller.scrollTop = offset - 20;
+		},
+		scrollDown() {
+			var scroller = this.$el.getElementsByClassName('songs__scroller')[0];
+			var offset = scroller.scrollTop;
+			scroller.scrollTop = offset + 20;
 		}
 	}
 }
@@ -45,12 +59,11 @@ export default {
 <style lang="scss">
 .songs {
 	position: relative;
+	margin: 1rem 0 1rem 1rem;
 	width: 320px;
 	@media only screen and (max-width: 550px) {
 		width: 45vw;
 	}
-	margin: 1rem 0 1rem 1rem;
-	
 	&__headline {
 		color: #fff;
 		font-weight: 700;
@@ -73,6 +86,15 @@ export default {
 		@media only screen and (min-width: 550px) {
 			margin-right: 1rem;
 		}
+	}
+	&__scrollers {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 1rem;
+		background: red;
+		padding: .5rem;
+		text-align: center;
 	}
 }
 
