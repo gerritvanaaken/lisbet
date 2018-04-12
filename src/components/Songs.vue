@@ -19,6 +19,18 @@
 import Song from './Song.vue';
 import draggable from 'vuedraggable'
 
+export function scrollTo(element, to, duration) {
+			if (duration <= 0) return;
+			var difference = to - element.scrollTop;
+			var perTick = difference / duration * 10;
+
+			setTimeout(function() {
+				element.scrollTop = element.scrollTop + perTick;
+				if (element.scrollTop === to) return;
+				scrollTo(element, to, duration - 10);
+			}, 10);
+		}
+
 export default {
 	name: 'songs',
 	components: {
@@ -45,12 +57,12 @@ export default {
 		scrollUp() {
 			var scroller = this.$el.getElementsByClassName('songs__scroller')[0];
 			var offset = scroller.scrollTop;
-			scroller.scrollTop = offset - 20;
+			scrollTo(scroller, offset - 100, 100);
 		},
 		scrollDown() {
 			var scroller = this.$el.getElementsByClassName('songs__scroller')[0];
 			var offset = scroller.scrollTop;
-			scroller.scrollTop = offset + 20;
+			scrollTo(scroller, offset + 100, 100);
 		}
 	}
 }
