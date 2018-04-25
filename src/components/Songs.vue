@@ -20,16 +20,16 @@ import Song from './Song.vue';
 import draggable from 'vuedraggable'
 
 export function scrollTo(element, to, duration) {
-			if (duration <= 0) return;
-			var difference = to - element.scrollTop;
-			var perTick = difference / duration * 10;
+	if (duration <= 0) return;
+	var difference = to - element.scrollTop;
+	var perTick = difference / duration * 10;
 
-			setTimeout(function() {
-				element.scrollTop = element.scrollTop + perTick;
-				if (element.scrollTop === to) return;
-				scrollTo(element, to, duration - 10);
-			}, 10);
-		}
+	setTimeout(function() {
+		element.scrollTop = element.scrollTop + perTick;
+		if (element.scrollTop === to) return;
+		scrollTo(element, to, duration - 10);
+	}, 10);
+}
 
 export default {
 	name: 'songs',
@@ -71,7 +71,7 @@ export default {
 <style lang="scss">
 .songs {
 	position: relative;
-	margin: 1rem 0 1rem 1rem;
+	margin: 1rem 0 0rem 1rem;
 	width: 320px;
 	@media only screen and (max-width: 550px) {
 		width: 45vw;
@@ -89,7 +89,7 @@ export default {
 	}
 	&__scroller {
 		margin-top: .5rem;
-		height: calc(100vh - 7rem);
+		height: calc(100vh - 10rem);
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 	}
@@ -98,15 +98,6 @@ export default {
 		@media only screen and (min-width: 550px) {
 			margin-right: 1rem;
 		}
-	}
-	&__scrollers {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 1rem;
-		background: red;
-		padding: .5rem;
-		text-align: center;
 	}
 }
 

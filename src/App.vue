@@ -133,11 +133,13 @@ body, html {
 
 body {
 	background: #346;
-	overflow: hidden;
 }
 
 .app {
 	font-family: 'robotoslab', sans-serif;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	&__header {
 		padding: .5rem 1rem;
 		background: rgba(0,0,0,0.5);
@@ -193,8 +195,62 @@ body {
 		}
 	}
 	&__betarea {
+		height: 100%;
 		display: flex;
 		align-items: stretch;
+	}
+}
+
+.scrollers {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 1rem;
+	@media only screen and (max-width: 550px) {
+		right: .5rem;
+	}
+	background: rgba(0,0,0,0.5);
+	padding: .5rem;
+	text-align: center;
+	border-top-left-radius: .3rem;
+	border-top-right-radius: .3rem;
+	&__button {
+		position: relative;
+		-webkit-appearance: none;
+		background: none;
+		border: 1px solid #fff;
+		display: inline-block;
+		padding: .5rem;
+		margin: 0 .2rem;
+		color: #fff;
+		border-radius: .2rem;
+		line-height: 1;
+		cursor: pointer;
+		text-indent: -10em;
+		overflow: hidden;
+		width: 2.5rem;
+		&--up {
+			transform: rotate(180deg);
+		}
+		&:focus, &:hover {
+			outline: none;
+			background: rgba(255,255,255,.2);
+		}
+		&:before, &:after {
+			content: '';
+			width: .75rem;
+			height: 1px;
+			background: #fff;
+			transform: rotate(45deg);
+			position: absolute;
+			top: 1rem;
+			left: .55rem;
+		}
+		&:after {
+			right: .55rem;
+			left: auto;
+			transform: rotate(-45deg);
+		}
 	}
 }
 

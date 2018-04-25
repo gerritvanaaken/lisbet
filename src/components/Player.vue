@@ -14,12 +14,28 @@
 				<bet-song v-for="(song, index) in player.ranking" :song="song" :key="song.country" :index="index" :locked="meta.bettingLocked" @delete="deleteSong(index)"></bet-song>
 			</transition-group>
 		</draggable>
+		<div class="player__scrollers scrollers">
+			<button class="scrollers__button scrollers__button--up" @click="scrollUp">hoch</button>
+			<button class="scrollers__button scrollers__button--down" @click="scrollDown">runter</button>
+		</div>
 	</article>
 </template>
 
 <script>
 import Song from './Song.vue';
 import draggable from 'vuedraggable'
+
+export function scrollTo(element, to, duration) {
+	if (duration <= 0) return;
+	var difference = to - element.scrollTop;
+	var perTick = difference / duration * 10;
+
+	setTimeout(function() {
+		element.scrollTop = element.scrollTop + perTick;
+		if (element.scrollTop === to) return;
+		scrollTo(element, to, duration - 10);
+	}, 10);
+}
 
 export default {
 	name: 'player',
@@ -81,6 +97,16 @@ export default {
 					mysongs.push(original);
 				}
 			});
+		},
+		scrollUp() {
+			var scroller = this.$el.getElementsByClassName('player__scroller')[0];
+			var offset = scroller.scrollTop;
+			scrollTo(scroller, offset - 100, 100);
+		},
+		scrollDown() {
+			var scroller = this.$el.getElementsByClassName('player__scroller')[0];
+			var offset = scroller.scrollTop;
+			scrollTo(scroller, offset + 100, 100);
 		}
 	},
 	computed: {
@@ -120,6 +146,7 @@ export default {
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: stretch;
+	position: relative;
 	
 	&__header {
 		position: relative;
@@ -187,7 +214,7 @@ export default {
 	}
 	&__scroller {
 		margin-top: .5rem;
-		height: calc(100vh - 7rem);
+		height: calc(100vh - 10rem);
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		display: flex;
@@ -217,6 +244,9 @@ export default {
 			text-align: center;
 
 		}
+	}
+	&__scrollers {
+		left: 1rem;
 	}
 
 	
