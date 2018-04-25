@@ -1,8 +1,8 @@
 <template>
 	<li class="songs__song song" :class="{ 'song--locked': locked }">
 		<div class="song__country">
-			<img class="song__flag" v-bind:src="'./src/assets/flags/' + song.country + '.svg'" width="30" height="20" />
-			<span class="song__countrycode">{{ song.country }}</span>
+			<img class="song__flag" v-bind:src="'./src/assets/flags/' + song.country + '.svg'" width="30" height="20" :alt="'Flag of' + countrylabels[song.country]" :title="countrylabels[song.country]" />
+			<span class="song__countrycode" :title="countrylabels[song.country]">{{ song.country }}</span>
 		</div>
 		<h3 class="song__title">{{ song.title }} <span class="song__points" v-if="locked">{{ song.points }}</span></h3>
 		<div class="song__artist">{{ song.artist }}</div>
@@ -32,7 +32,23 @@ export default {
 		deleteSong() {
 			this.$emit('delete');
 		},
-	}
+	},
+	data () {
+		return {
+			countrylabels: {
+				"ALB": "Albania",
+				"AND": "Andorra?",
+				"ARM": "Armenia",
+				"AUS": "Australia",
+				"AUT": "Austria",
+				"AZE": "Azerbaidchan?",
+				"BEL": "Belgium",
+				"BLR": "Belarus?",
+				"BOS": "Bosnia?",
+				"BUL": "Bulgaria"
+			}
+		}
+	},
 }
 </script>
 
