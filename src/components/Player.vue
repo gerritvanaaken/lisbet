@@ -23,19 +23,8 @@
 
 <script>
 import Song from './Song.vue';
-import draggable from 'vuedraggable'
-
-export function scrollTo(element, to, duration) {
-	if (duration <= 0) return;
-	var difference = to - element.scrollTop;
-	var perTick = difference / duration * 10;
-
-	setTimeout(function() {
-		element.scrollTop = element.scrollTop + perTick;
-		if (element.scrollTop === to) return;
-		scrollTo(element, to, duration - 10);
-	}, 10);
-}
+import draggable from 'vuedraggable';
+import mixin from '../mixin';
 
 export default {
 	name: 'player',
@@ -43,6 +32,7 @@ export default {
 		draggable,
 		'bet-song': Song
 	},
+	mixins: [ mixin ],
 	props: {
 		songs: {
 			type: Array
@@ -101,12 +91,12 @@ export default {
 		scrollUp() {
 			var scroller = this.$el.getElementsByClassName('player__scroller')[0];
 			var offset = scroller.scrollTop;
-			scrollTo(scroller, offset - 100, 100);
+			this.scrollTo(scroller, offset - 100, 100);
 		},
 		scrollDown() {
 			var scroller = this.$el.getElementsByClassName('player__scroller')[0];
 			var offset = scroller.scrollTop;
-			scrollTo(scroller, offset + 100, 100);
+			this.scrollTo(scroller, offset + 100, 100);
 		}
 	},
 	computed: {
