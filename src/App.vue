@@ -3,6 +3,10 @@
 		<header class="app__header">
 			<h1 class="app__headline">#lisbet</h1>
 			<button v-if="!songdata.meta.bettingLocked" class="app__button" @click="addPlayer()">Add New Player</button>
+			<div class="app__phases">
+				<div class="app__phase app__phase--1" :class="{ 'app__phase--active': !songdata.meta.bettingLocked }">Phase 1: <small class="app__phaseremark">Guessing</small></div>
+				<div class="app__phase app__phase--2" :class="{ 'app__phase--active': songdata.meta.bettingLocked }">Phase 2: <small class="app__phaseremark">Resulting</small></div>
+			</div>
 			<div class="app__subline">The betting game for Lisbon 2018</div>
 		</header>
 		<div class="app__betarea">
@@ -162,6 +166,27 @@ body {
 			display: none;
 		}
 	}
+	&__phases {
+		border: 1px solid #fff;
+		border-radius: .3rem;
+		padding: .15rem 1rem .15rem 1.5rem;
+		@media only screen and (max-width: 900px) {
+			display: none;
+		}
+	}
+	&__phase {
+		line-height: 1.2;
+		font-size: .7rem;
+		letter-spacing: .06em;
+		color: rgba(255,255,255,.5);
+		&--active {
+			color: #fff;
+			text-indent: -1.15ch;
+			&:before {
+				content: "» ";
+			}
+		}
+	}
 	&__button {
 		background: none;
 		border: 1px solid #fff;
@@ -199,6 +224,7 @@ body {
 		display: flex;
 		align-items: stretch;
 	}
+
 }
 
 .scrollers {
