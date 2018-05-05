@@ -2,23 +2,29 @@
 	<div id="app" class="app">
 		<header class="app__header">
 			<h1 class="app__headline">#lisbet</h1>
-			<button v-if="!songdata.meta.bettingLocked" class="app__button" @click="addPlayer()">Add New Player</button>
+			
 			<div class="app__phases">
 				<div class="app__phase app__phase--1" :class="{ 'app__phase--active': !songdata.meta.bettingLocked }">Phase 1: <small class="app__phaseremark">Guessing</small></div>
 				<div class="app__phase app__phase--2" :class="{ 'app__phase--active': songdata.meta.bettingLocked }">Phase 2: <small class="app__phaseremark">Resulting</small></div>
 			</div>
+			<button v-if="!songdata.meta.bettingLocked" class="app__button app__button--add" @click="addPlayer()">Add New Player</button>
+			<button class="app__button app__button--readme" @click="toggleReadme()">What’s this?</button>
 			<div class="app__subline">The betting game for Lisbon 2018</div>
 		</header>
 		<div class="app__betarea">
 			<bet-songs :songs="songdata.songs" :meta="songdata.meta"></bet-songs>
 			<bet-players :players="players" :songs="songdata.songs" :meta="songdata.meta"></bet-players>
 		</div>
+		<transition name="fade">
+			<bet-readme v-if="readme"></bet-readme>
+		</transition>
 	</div>
 </template>
 
 <script>
 import Songs from './components/Songs.vue';
 import Players from './components/Players.vue';
+import Readme from './components/Readme.vue';
 import axios from 'axios';
 
 var draggingCountry = true;
@@ -27,7 +33,8 @@ export default {
 	name: 'app',
 	components: {
 		'bet-songs': Songs,
-		'bet-players': Players
+		'bet-players': Players,
+		'bet-readme': Readme
 	},
 	methods: {
 		fetchSongs () {
@@ -51,6 +58,9 @@ export default {
 				name: 'Player '+ (this.players.length + 1),
 				ranking: []
 			})
+		},
+		toggleReadme() {
+			this.readme = !this.readme;
 		}
 	},
 	created () {
@@ -74,7 +84,8 @@ export default {
 				},
 				"songs": []
 			},
-			players: []
+			players: [],
+			readme: false
 		}
 	},
 	watch: {
@@ -167,9 +178,6 @@ body {
 		}
 	}
 	&__phases {
-		border: 1px solid #fff;
-		border-radius: .3rem;
-		padding: .15rem 1rem .15rem 1.5rem;
 		@media only screen and (max-width: 900px) {
 			display: none;
 		}
@@ -181,7 +189,7 @@ body {
 		color: rgba(255,255,255,.5);
 		&--active {
 			color: #fff;
-			text-indent: -1.15ch;
+			text-indent: -1.38ch;
 			&:before {
 				content: "» ";
 			}
@@ -201,18 +209,20 @@ body {
 			overflow: hidden;
 			white-space: nowrap;
 		}
-		&:before {
-			content: '+';
-			background: #fff;
-			color: #333;
-			text-align: center;
-			width: 1em;
-			line-height: 1;
-			margin-right: .5em;
-			border-radius: 50%;
-			display: inline-block;
-			@media only screen and (max-width: 400px) {
-				margin-right: 3rem;
+		&--add {
+			&:before {
+				content: '+';
+				background: #fff;
+				color: #333;
+				text-align: center;
+				width: 1em;
+				line-height: 1;
+				margin-right: .5em;
+				border-radius: 50%;
+				display: inline-block;
+				@media only screen and (max-width: 400px) {
+					margin-right: 3rem;
+				}
 			}
 		}
 		&:focus, &:hover {
@@ -278,6 +288,13 @@ body {
 			transform: rotate(-45deg);
 		}
 	}
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 </style>
