@@ -8,7 +8,7 @@
 				<div class="app__phase app__phase--2" :class="{ 'app__phase--active': songdata.meta.bettingLocked }">Phase 2: <small class="app__phaseremark">Resulting</small></div>
 			</div>
 			<button v-if="!songdata.meta.bettingLocked" class="app__button app__button--add" @click="addPlayer()">Add New Player</button>
-			<button class="app__button app__button--readme" @click="toggleReadme()">What’s this?</button>
+			<button class="app__button app__button--readme" @click="toggleReadme()">How To / Legal</button>
 			<div class="app__subline">The betting game for Lisbon 2018</div>
 		</header>
 		<div class="app__betarea">

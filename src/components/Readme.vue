@@ -1,8 +1,9 @@
 <template>
 	<div class="readme">
-		<h2>Instructions</h2>
 
-		<h3>What is #lisbet about?</h3>
+		<section class="readme__section">
+
+		<h2>What is #lisbet about?</h2>
 
 		<p>Watch the Eurovision Song Contest with your friends and guess the final ranking of the two Semi-Finals and the Grand Final in Lisbon. This little website helps you sorting your guesses and automatically calculates your matching score. Who’s going to win?</p>
 
@@ -24,12 +25,29 @@
 
 		<p>That’s about it. I made this just for fun! Hope it helps ESC enthusiasts to simplify their “betting experience”. Have a great Eurovision party!</p>
 
+	</section>
+
+	<section class="readme__section">
+
+		<h2>Imprint</h2>
+
+		<p>This website is a non-commercial hobby project by Gerrit van Aaken, Pleicherkirchgasse 8, 97070 Würzburg, Germany</p>
+
 		<ul>
 			<li><a href="mailto:gerrit@praegnanz.de">gerrit@praegnanz.de</a></li>
 			<li><a href="https://praegnanz.de">My Blog</a></li>
 			<li><a href="https://github.com/gerritvanaaken/lisbet/issues">#lisbet on github</a></li>
-			
 		</ul>
+
+		<h3>Privacy information</h3>
+
+		<p>I do not collect personal information about the visitors of this website. All connections are encrypted via SSL. The Apache server logfiles (written by HostEurope) do not contain IP addresses at all.</p>
+
+		<p>This websites makes use of cookies. These are small bits of memory within your local browser, where the current player names and song orders are stored. This information is not being accessed, stored or processed by the web server – they remain completely local. They are only used to restore the status of your game when you accidentally left the website.</p>
+
+		<p>For statistics, some basic access data such as browser, operation system, screen size, referrer page and the first two bytes of the IP address are sent to a program called Matomo, which I do host myself at https://piwik.skizzenserver.de. This connection is also encrypted via SSL. I do not share this access information in any way with any third party.</p>
+
+	</section>
 
 	</div>
 </template>
@@ -44,18 +62,23 @@ export default {
 
 <style lang="scss">
 .readme {
+	display: flex;
 	background: rgba(255,255,255,0.95);
 	position: absolute;
 	top: 3.5rem;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 1rem 2rem 3rem;
 	line-height: 1.5;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
+	&__section {
+		flex: 1;
+		padding: 1rem 2rem 3rem;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
 	h2 {
 		font-size: 2rem;
+		margin-bottom: .5em;
 	}
 	h3 {
 		font-size: 1.2rem;
