@@ -24,7 +24,7 @@
 <script>
 import Song from './Song.vue';
 import draggable from 'vuedraggable';
-import mixin from '../mixin';
+import VueScrollTo from 'vue-scrollto';
 
 export default {
 	name: 'player',
@@ -90,13 +90,21 @@ export default {
 		},
 		scrollUp() {
 			var scroller = this.$el.getElementsByClassName('player__scroller')[0];
+			var firstsong = this.$el.getElementsByClassName('songs__song')[0];
 			var offset = scroller.scrollTop;
-			this.scrollTo(scroller, offset - 100, 100);
+			VueScrollTo.scrollTo(firstsong, 300, {
+				container: scroller,
+				offset: offset - 200
+			});
 		},
 		scrollDown() {
 			var scroller = this.$el.getElementsByClassName('player__scroller')[0];
+			var firstsong = this.$el.getElementsByClassName('songs__song')[0];
 			var offset = scroller.scrollTop;
-			this.scrollTo(scroller, offset + 100, 100);
+			VueScrollTo.scrollTo(firstsong, 300, {
+			container: scroller,
+				offset: offset + 200
+			});
 		}
 	},
 	computed: {
