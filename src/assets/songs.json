@@ -1,145 +1,137 @@
 {
 	"meta": {
 		"formatversion": "1",
-		"day": "2018-05-08",
-		"showtype": "First Semi-Final",
+		"day": "2018-05-10",
+		"showtype": "Second Semi-Final",
 		"bettingLocked": false,
 		"finished": false
 	},
 	"songs": [
 		{
-			"country": "SUI",
-			"order": 17,
-			"points": 0,
-			"title": "Stones",
-			"artist": "ZiBBZ"
-		},
-		{
-			"country": "FIN",
-			"order": 15,
-			"points": 0,
-			"title": "Monsters",
-			"artist": "Saara Aalto"
-		},
-		{
-			"country": "BLR",
-			"order": 8,
-			"points": 0,
-			"title": "Forever",
-			"artist": "ALEKSEEV"
-		},
-		{
-			"country": "BUL",
-			"order": 10,
-			"points": 0,
-			"title": "Bones",
-			"artist": "EQUINOX"
-		},
-		{
-			"country": "AUT",
-			"order": 13,
-			"points": 0,
-			"title": "Nobody But You",
-			"artist": "Cesár Sampson"
-		},
-		{
-			"country": "LTU",
-			"order": 6,
-			"points": 0,
-			"title": "When We're Old",
-			"artist": "Ieva Zasimauskaitė"
-		},
-		{
-			"country": "ALB",
-			"order": 3,
-			"points": 0,
-			"title": "Mall",
-			"artist": "Eugent Bushpepa"
-		},
-		{
-			"country": "IRL",
-			"order": 18,
-			"points": 0,
-			"title": "Together",
-			"artist": "Ryan O'Shaughnessy"
-		},
-		{
-			"country": "ARM",
-			"order": 16,
-			"points": 0,
-			"title": "Qami",
-			"artist": "Sevak Khanagyan"
-		},
-		{
-			"country": "CYP",
-			"order": 19,
-			"points": 0,
-			"title": "Fuego",
-			"artist": "Eleni Foureira"
-		},
-		{
-			"country": "CZE",
-			"order": 5,
-			"points": 0,
-			"title": "Lie To Me",
-			"artist": "Mikolas Josef"
-		},
-		{
-			"country": "BEL",
-			"order": 4,
-			"points": 0,
-			"title": "A Matter Of Time",
-			"artist": "Sennek"
-		},
-		{
-			"country": "CRO",
-			"order": 12,
-			"points": 0,
-			"title": "Crazy",
-			"artist": "Franka"
-		},
-		{
-			"country": "ISL",
-			"order": 2,
-			"points": 0,
-			"title": "Our Choice",
-			"artist": "Ari Ólafsson"
-		},
-		{
-			"country": "AZE",
+			"country": "NOR",
 			"order": 1,
 			"points": 0,
-			"title": "X My Heart",
-			"artist": "Aisel"
+			"title": "That’s How You Write A Song",
+			"artist": "Alexander Rybak"
 		},
 		{
-			"country": "GRE",
-			"order": 14,
+			"country": "ROM",
+			"order": 2,
 			"points": 0,
-			"title": "Oniro Mou",
-			"artist": "Yianna Terzi"
+			"title": "Goodbye",
+			"artist": "The Humans"
 		},
 		{
-			"country": "ISR",
+			"country": "SRB",
+			"order": 3,
+			"points": 0,
+			"title": "Nova Deca",
+			"artist": "Sanja Ilić & Balkanika"
+		},
+		{
+			"country": "SMR",
+			"order": 4,
+			"points": 0,
+			"title": "Who We Are",
+			"artist": "Jessika featuring Jenifer Brening"
+		},
+		{
+			"country": "DEN",
+			"order": 5,
+			"points": 0,
+			"title": "Higher Ground",
+			"artist": "Rasmussen"
+		},
+		{
+			"country": "RUS",
+			"order": 6,
+			"points": 0,
+			"title": "I Won’t Break",
+			"artist": "Julia Samoylova"
+		},
+		{
+			"country": "MDA",
 			"order": 7,
 			"points": 0,
-			"title": "TOY",
-			"artist": "Netta"
+			"title": "My Lucky Day",
+			"artist": "DoReDoS"
 		},
 		{
-			"country": "EST",
+			"country": "NED",
+			"order": 8,
+			"points": 0,
+			"title": "Outlaw In 'Em",
+			"artist": "Waylon"
+		},
+		{
+			"country": "AUS",
 			"order": 9,
 			"points": 0,
-			"title": "La Forza",
-			"artist": "Elina Nechayeva"
+			"title": "We Got Love",
+			"artist": "Jessica Mauboy"
 		},
 		{
-			"country": "MKD",
+			"country": "GEO",
+			"order": 10,
+			"points": 0,
+			"title": "For You",
+			"artist": "Ethno-Jazz Band Iriao"
+		},
+		{
+			"country": "POL",
 			"order": 11,
 			"points": 0,
-			"title": "Lost And Found",
-			"artist": "Eye Cue"
+			"title": "Light Me Up",
+			"artist": "Gromee feat. Lukas Meijer"
+		},
+		{
+			"country": "MLT",
+			"order": 12,
+			"points": 0,
+			"title": "Taboo",
+			"artist": "Christabelle"
+		},
+		{
+			"country": "HUN",
+			"order": 13,
+			"points": 0,
+			"title": "Viszlát Nyár",
+			"artist": "AWS"
+		},
+		{
+			"country": "LET",
+			"order": 14,
+			"points": 0,
+			"title": "Laura Rizzotto",
+			"artist": "Funny Girl"
+		},
+		{
+			"country": "SWE",
+			"order": 15,
+			"points": 0,
+			"title": "Benjamin Ingrosso",
+			"artist": "Dance You Off"
+		},
+		{
+			"country": "MNE",
+			"order": 16,
+			"points": 0,
+			"title": "Vanja Radovanović",
+			"artist": "Inje"
+		},
+		{
+			"country": "SLO",
+			"order": 17,
+			"points": 0,
+			"title": "Hvala, ne!",
+			"artist": "Lea Sirk"
+		},
+		{
+			"country": "UKR",
+			"order": 18,
+			"points": 0,
+			"title": "Under The Ladder",
+			"artist": "MELOVIN"
 		}
-
 	]
 }
