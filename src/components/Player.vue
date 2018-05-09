@@ -32,7 +32,6 @@ export default {
 		draggable,
 		'bet-song': Song
 	},
-	mixins: [ mixin ],
 	props: {
 		songs: {
 			type: Array
