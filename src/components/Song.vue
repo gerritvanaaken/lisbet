@@ -70,6 +70,7 @@ export default {
 				"MKD": "F.Y.R. Macedonia",
 				"MLT": "Malta",
 				"MNE": "Montenegro",
+				"MDA": "Moldova",
 				"MON": "Monaco",
 				"MOR": "Morocco",
 				"NED": "The Netherlands",
