@@ -65,7 +65,7 @@ export default {
 	},
 	created () {
 		this.fetchSongs();
-		var songFetcher = setInterval(this.fetchSongs, 2000);
+		var songFetcher = setInterval(this.fetchSongs, 10000);
 	},
 	mounted () {
 		if (localStorage.getItem('players')) {
