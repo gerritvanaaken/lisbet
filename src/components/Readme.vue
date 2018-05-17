@@ -45,8 +45,6 @@
 
 		<p>This websites makes use of cookies. These are small bits of memory within your local browser, where the current player names and song orders are stored. This information is not being accessed, stored or processed by the web server – they remain completely local. They are only used to restore the status of your game when you accidentally left the website.</p>
 
-		<p>For statistics, some basic access data such as browser, operation system, screen size, referrer page and the first two bytes of the IP address are sent to a program called Matomo, which I do host myself at https://piwik.skizzenserver.de. This connection is also encrypted via SSL. I do not share this access information in any way with any third party.</p>
-
 	</section>
 
 	</div>
