@@ -3,189 +3,189 @@
 		"formatversion": "1",
 		"day": "2018-05-12",
 		"showtype": "Grand Final",
-		"bettingLocked": false,
-		"finished": false
+		"bettingLocked": true,
+		"finished": true
 	},
 	"songs": [
 		{
 			"country": "UKR",
 			"order": 1,
-			"points": 0,
+			"points": 130,
 			"title": "Under The Ladder",
 			"artist": "MELOVIN"
 		},
 		{
 			"country": "ESP",
 			"order": 2,
-			"points": 0,
+			"points": 61,
 			"title": "Tu Canción",
 			"artist": "Amaia y Alfred"
 		},
 		{
 			"country": "SLO",
 			"order": 3,
-			"points": 0,
+			"points": 64,
 			"title": "Hvala, ne!",
 			"artist": "Lea Sirk"
 		},
 		{
 			"country": "LTU",
 			"order": 4,
-			"points": 0,
+			"points": 181,
 			"title": "When We’re Old",
 			"artist": "Ieva Zasimauskaitė"
 		},
 		{
 			"country": "AUT",
 			"order": 5,
-			"points": 0,
+			"points": 342,
 			"title": "Cesár Sampson",
 			"artist": "Nobody But You"
 		},
 		{
 			"country": "EST",
 			"order": 6,
-			"points": 0,
+			"points": 245,
 			"title": "La Forza",
 			"artist": "Elina Nechayeva"
 		},
 		{
 			"country": "NOR",
 			"order": 7,
-			"points": 0,
+			"points": 144,
 			"title": "That’s How You Write A Song",
 			"artist": "Alexander Rybak"
 		},
 		{
 			"country": "POR",
 			"order": 8,
-			"points": 0,
+			"points": 39,
 			"title": "O Jardim",
 			"artist": "Cláudia Pascoal"
 		},
 		{
 			"country": "GBR",
 			"order": 9,
-			"points": 0,
+			"points": 48,
 			"title": "Storm",
 			"artist": "SuRie"
 		},
 		{
 			"country": "SRB",
 			"order": 10,
-			"points": 0,
+			"points": 113,
 			"title": "Nova Deca",
 			"artist": "Sanja Ilić & Balkanika"
 		},
 		{
 			"country": "GER",
 			"order": 11,
-			"points": 0,
+			"points": 340,
 			"title": "You Let Me Walk Alone",
 			"artist": "Michael Schulte"
 		},
 		{
 			"country": "ALB",
 			"order": 12,
-			"points": 0,
+			"points": 184,
 			"title": "Mall",
 			"artist": "Eugent Bushpepa"
 		},
 		{
 			"country": "FRA",
 			"order": 13,
-			"points": 0,
+			"points": 173,
 			"title": "Mercy",
 			"artist": "Madame Monsieur"
 		},
 		{
 			"country": "CZE",
 			"order": 14,
-			"points": 0,
+			"points": 281,
 			"title": "Lie To Me",
 			"artist": "Mikolas Josef"
 		},
 		{
 			"country": "DEN",
 			"order": 15,
-			"points": 0,
+			"points": 226,
 			"title": "Higher Ground",
 			"artist": "Rasmussen"
 		},
 		{
 			"country": "AUS",
 			"order": 16,
-			"points": 0,
+			"points": 99,
 			"title": "We Got Love",
 			"artist": "Jessica Mauboy"
 		},
 		{
 			"country": "FIN",
 			"order": 17,
-			"points": 0,
+			"points": 46,
 			"title": "Monsters",
 			"artist": "Saara Aalto"
 		},
 		{
 			"country": "BUL",
 			"order": 18,
-			"points": 0,
+			"points": 166,
 			"title": "Bones",
 			"artist": "EQUINOX"
 		},
 		{
 			"country": "MDA",
 			"order": 19,
-			"points": 0,
+			"points": 209,
 			"title": "My Lucky Day",
 			"artist": "DoReDoS"
 		},
 		{
 			"country": "SWE",
 			"order": 20,
-			"points": 0,
+			"points": 274,
 			"title": "Dance You Off",
 			"artist": "Benjamin Ingrosso"
 		},
 		{
 			"country": "HUN",
 			"order": 21,
-			"points": 0,
+			"points": 93,
 			"title": "Viszlát Nyár",
 			"artist": "AWS"
 		},
 		{
 			"country": "ISR",
-			"order": 22,
-			"points": 0,
+			"order": 28,
+			"points": 529,
 			"title": "TOY",
 			"artist": "Netta"
 		},
 		{
 			"country": "NED",
 			"order": 23,
-			"points": 0,
+			"points": 121,
 			"title": "Outlaw In ’Em",
 			"artist": "Waylon"
 		},
 		{
 			"country": "IRL",
 			"order": 24,
-			"points": 0,
+			"points": 136,
 			"title": "Together",
 			"artist": "Ryan O'Shaughnessy"
 		},
 		{
 			"country": "CYP",
 			"order": 25,
-			"points": 0,
+			"points": 436,
 			"title": "Fuego",
 			"artist": "Eleni Foureira"
 		},
 		{
 			"country": "ITA",
 			"order": 26,
-			"points": 0,
+			"points": 308,
 			"title": "Non Mi Avete Fatto Niente",
 			"artist": "Ermal Meta e Fabrizio Moro"
 		}
